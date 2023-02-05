@@ -102,8 +102,9 @@ class PrivacyPage extends StatelessWidget {
 
   Container buildMobile(Size size) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: size.width * .25),
+      padding: EdgeInsets.symmetric(horizontal: size.width * .05),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
           Text(
               "Statement about Ezer Communication system which is a product of FreesTech Enterprise."),

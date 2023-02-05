@@ -67,52 +67,34 @@ class AboutPage extends StatelessWidget {
     );
 
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.white,
-      //   leading: Container(
-      //     color: Colors.white,
-      //     child: Image.asset('assets/ezer_logo.jpg'),
-      //   ),
-      //   title: const Text('Ezer'),
-      //   actions: [
-      //     InkWell(
-      //       onTap: () {},
-      //       child: const Text('About Ezer'),
-      //     ),
-      //     InkWell(
-      //       onTap: () {
-      //         Navigator.of(context).pushNamed(privacy);
-      //       },
-      //       child: const Text('Privacy'),
-      //     )
-      //   ],
-      // ),
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            appBar,
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: size.width * .2),
-              height: size.height * .2,
-              child: const Center(
-                child: Text(
-                  'About',
-                  style: TextStyle(fontSize: 25),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              appBar,
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: size.width * .2),
+                height: size.height * .2,
+                child: const Center(
+                  child: Text(
+                    'About',
+                    style: TextStyle(fontSize: 25),
+                  ),
                 ),
               ),
-            ),
-            LayoutBuilder(
-              builder: (context, constraints) {
-                if (constraints.maxWidth < 450) {
-                  return buildMobile(size);
-                } else {
-                  return buildDesktop(size);
-                }
-              },
-            ),
-          ],
+              LayoutBuilder(
+                builder: (context, constraints) {
+                  if (constraints.maxWidth < 450) {
+                    return buildMobile(size);
+                  } else {
+                    return buildDesktop(size);
+                  }
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -150,7 +132,7 @@ class AboutPage extends StatelessWidget {
 
   Container buildMobile(Size size) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: size.width * .4),
+      padding: EdgeInsets.symmetric(horizontal: size.width * .05),
       child: Column(
         children: const [
           Text(
